@@ -361,7 +361,7 @@ async def translate(bot, update, text):
     translator = Translator()
     try:
         translate = translator.translate(text, dest=language)
-        translate_text = f"**Translated to {language}**"
+        translate_text = f"**Translated from {translator} to {language}**"
         translate_text += f"\n\n`{translate.text}`"
         if len(translate_text) < 4096:
             await message.edit_text(
